@@ -3,11 +3,24 @@
 #include <string.h>
 #include <math.h>
 #include <stdio.h>
-int main()
-{
-    int a,b,c;
-    a = b = c = 10;
-    c = a++ || ++b && ++c;
-    printf("%d %d %d",c, a, b);
+
+
+double my_atof(char *nptr){
+    int* p;
+    
+    while (*nptr != '\0') {
+        if ((*nptr >= 0 && *nptr <= 9) || *nptr == '.') {
+            if(*nptr >= 0 && *nptr <= 9){
+                *p=*nptr;
+            }
+        }
+        *nptr++;
+    }
+    
+    
     return 0;
+}
+
+int main() {
+    printf("%d",calc_zig_spaces(3));
 }
